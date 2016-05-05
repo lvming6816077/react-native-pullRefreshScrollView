@@ -27,3 +27,14 @@ render() {
         );
   }
 ```
+#####props
+
+<pre>onRefresh：当出发刷新时的回调</pre>
+
+#####收回下拉刷新
+```javascript
+onRefresh(){
+        this.refs.PullRefresh.onRefreshEnd();
+}
+```
+
