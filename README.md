@@ -27,9 +27,24 @@ render() {
         );
   }
 ```
+#####在ListView中使用
+```javascript
+import PullRefreshScrollView from 'react-native-pullrefresh-scrollview';
+
+render() {
+   return (
+      <ListView
+        renderScrollComponent={(props) => <PullRefreshScrollView ref="PullRefresh" onRefresh={()=>this.onRefresh()} {...props}     />}
+
+        dataSource={this.state.dataSource}
+        renderRow={(rowData) => <Text>{rowData}</Text>}
+       />
+   );
+}
+```
 #####props
 
-<pre>onRefresh：当出发刷新时的回调</pre>
+<pre>onRefresh：当触发刷新时的回调</pre>
 
 #####收回下拉刷新
 ```javascript
@@ -37,26 +52,5 @@ onRefresh(){
         this.refs.PullRefresh.onRefreshEnd();
 }
 ```
-#####在ListView中使用
-```javascript
-import PullRefreshScrollView from 'react-native-pullrefresh-scrollview';
 
-render() {
-
-        return (
-            
-        
-                <ListView
-                    renderScrollComponent={(props) => <PullRefreshScrollView ref="PullRefresh" onRefresh={()=>this.onRefresh()} {...props} />}
-        
-                    dataSource={this.state.dataSource}
-                    renderSeparator={(sectionID, rowID) => <View key={`${sectionID}-${rowID}`} style={styles.separator} />}
-                    renderRow={(rowData) => <Text>{rowData}</Text>}
-                />
-        
-                
-            
-        );
-}
-```
 
