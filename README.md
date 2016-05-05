@@ -52,5 +52,6 @@ onRefresh(){
         this.refs.PullRefresh.onRefreshEnd();
 }
 ```
-
+##建议和反馈
+此组件还在不断更新中，如有需求欢迎提出反馈441403517@qq.com
 
