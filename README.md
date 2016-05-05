@@ -14,7 +14,7 @@ React Native下拉刷新组件 ios 平台 支持ScrollView,ListView
 #####从npm上下载组件
 <pre>npm install react-native-pullrefresh-scrollview</pre>
 
-#####在代码中使用
+#####在ScrollView中使用
 ```javascript
 import PullRefreshScrollView from 'react-native-pullrefresh-scrollview';
 
@@ -22,7 +22,7 @@ render() {
 
         return (
                 <PullRefreshScrollView ref="PullRefresh" onRefresh={()=>this.onRefresh()}>
-                    <View style={styles.scrollItem}><Text>Scroll1</Text></View>
+                    <View><Text>Scroll1</Text></View>
                 </PullRefreshScrollView>
         );
   }
@@ -35,6 +35,28 @@ render() {
 ```javascript
 onRefresh(){
         this.refs.PullRefresh.onRefreshEnd();
+}
+```
+#####在ListView中使用
+```javascript
+import PullRefreshScrollView from 'react-native-pullrefresh-scrollview';
+
+render() {
+
+        return (
+            
+        
+                <ListView
+                    renderScrollComponent={(props) => <PullRefreshScrollView ref="PullRefresh" onRefresh={()=>this.onRefresh()} {...props} />}
+        
+                    dataSource={this.state.dataSource}
+                    renderSeparator={(sectionID, rowID) => <View key={`${sectionID}-${rowID}`} style={styles.separator} />}
+                    renderRow={(rowData) => <Text>{rowData}</Text>}
+                />
+        
+                
+            
+        );
 }
 ```
 
