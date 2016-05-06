@@ -64,7 +64,8 @@ indicatorArrowImg: { 下拉箭头图片和样式 default arrow.png
 indicatorImg: {  loading图片和样式 default <ActivityIndicatorIOS />
     style:{},
     url:''
-},
+}
+refreshType:'normal'  // normal  image  text
 </pre>
 
 #####收回下拉刷新
