@@ -52,7 +52,20 @@ render() {
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage2.gif" />
 #####props
 
-<pre>onRefresh：当触发刷新时的回调</pre>
+<pre>
+onRefresh：当触发刷新时的回调
+refreshedText: '释放立即刷新'
+refreshingText: '正在刷新数据中..'
+refreshText:'下拉可以刷新'
+indicatorArrowImg: { 下拉箭头图片和样式 default arrow.png
+    style:{},
+    url:''
+}
+indicatorImg: {  loading图片和样式 default <ActivityIndicatorIOS />
+    style:{},
+    url:''
+},
+</pre>
 
 #####收回下拉刷新
 ```javascript
