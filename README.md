@@ -41,6 +41,11 @@ render() {
        />
    );
 }
+
+
+<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewText.gif" />
+<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage.gif" />
+
 ```
 #####props
 
