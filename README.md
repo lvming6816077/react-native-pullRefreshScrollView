@@ -43,12 +43,12 @@ render() {
 }
 
 ```
-纯文字
-<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewText.gif" />
-定制图片
+#####定制图片
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage.gif" />
-<br/>
-纯图片
+
+#####纯文字
+<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewText.gif" />
+#####纯图片
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage2.gif" />
 #####props
 
