@@ -43,9 +43,12 @@ render() {
 }
 
 ```
-单图
+纯文字
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewText.gif" />
+定制图片
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage.gif" />
+纯图片
+<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage2.gif" />
 #####props
 
 <pre>onRefresh：当触发刷新时的回调</pre>
