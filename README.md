@@ -42,11 +42,10 @@ render() {
    );
 }
 
-
+```
+单图
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewText.gif" />
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage.gif" />
-
-```
 #####props
 
 <pre>onRefresh：当触发刷新时的回调</pre>
