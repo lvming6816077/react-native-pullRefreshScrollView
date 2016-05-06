@@ -15,29 +15,35 @@ import React, {
 
 
 
-
-
 export default class PullRefreshScrollView extends Component {
     constructor(props) {
         super(props);
-        this.base64Icon = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAABQBAMAAAD8TNiNAAAAJ1BMVEUAAACqqqplZWVnZ2doaGhqampoaGhpaWlnZ2dmZmZlZWVmZmZnZ2duD78kAAAADHRSTlMAA6CYqZOlnI+Kg/B86E+1AAAAhklEQVQ4y+2LvQ3CQAxGLSHEBSg8AAX0jECTnhFosgcjZKr8StE3VHz5EkeRMkF0rzk/P58k9rgOW78j+TE99OoeKpEbCvcPVDJ0OvsJ9bQs6Jxs26h5HCrlr9w8vi8zHphfmI0fcvO/ZXJG8wDzcvDFO2Y/AJj9ADE7gXmlxFMIyVpJ7DECzC9J2EC2ECAAAAAASUVORK5CYII=';
-        this.dragFlag = false; //scrollview是否处于拖动状态的标志
-        this.prStoryKey = 'prtimekey';
 
+        this.refreshedText = props.refreshedText;
+        this.refreshingText = props.refreshingText;
+        this.refreshText = props.refreshText;
         this.state = {
-            prTitle:'向下拉刷新..',
+            prTitle:this.refreshText,
             prState:0,
             prTimeDisplay:'暂无更新',
             prLoading:false,
             prArrowDeg:new Animated.Value(0)
         };
+
+
+        this.base64Icon = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAABQBAMAAAD8TNiNAAAAJ1BMVEUAAACqqqplZWVnZ2doaGhqampoaGhpaWlnZ2dmZmZlZWVmZmZnZ2duD78kAAAADHRSTlMAA6CYqZOlnI+Kg/B86E+1AAAAhklEQVQ4y+2LvQ3CQAxGLSHEBSg8AAX0jECTnhFosgcjZKr8StE3VHz5EkeRMkF0rzk/P58k9rgOW78j+TE99OoeKpEbCvcPVDJ0OvsJ9bQs6Jxs26h5HCrlr9w8vi8zHphfmI0fcvO/ZXJG8wDzcvDFO2Y/AJj9ADE7gXmlxFMIyVpJ7DECzC9J2EC2ECAAAAAASUVORK5CYII=';
+        this.dragFlag = false; //scrollview是否处于拖动状态的标志
+        this.prStoryKey = 'prtimekey';
+        
+
+        
     }
     onScroll(e){
         var y = e.nativeEvent.contentOffset.y;
       if (this.dragFlag) {
         if (y <= -70) {
           this.setState({
-            prTitle:'释放立即刷新',
+            prTitle:this.refreshedText,
             prState:1
           });
 
@@ -50,7 +56,7 @@ export default class PullRefreshScrollView extends Component {
         } else {
 
           this.setState({
-            prTitle:'下拉可以刷新',
+            prTitle:this.refreshText,
             prState:0
           });
           Animated.timing(this.state.prArrowDeg, {
@@ -81,7 +87,7 @@ export default class PullRefreshScrollView extends Component {
 
         
         this.setState({
-          prTitle:'正在刷新数据中..',
+          prTitle:this.refreshingText,
           prLoading:true,
           prArrowDeg:new Animated.Value(0),
           
@@ -111,7 +117,7 @@ export default class PullRefreshScrollView extends Component {
     onRefreshEnd(){
         let now = new Date().getTime();
         this.setState({
-          prTitle:'下拉可以刷新',
+          prTitle:this.refreshText,
           prLoading:false,
           prTimeDisplay:dateFormat(now,'yyyy-MM-dd hh:mm')
         });
@@ -138,19 +144,167 @@ export default class PullRefreshScrollView extends Component {
             
         });
     }
-    render() {
-
-        let arrowStyle = {
-            position:'absolute',
-            width:10,
-            height:26,
-            left:-50,
-            top:-3,
-            transform:[{rotate:this.state.prArrowDeg.interpolate({
+    renderNormalContent(){
+      this.transform = [{rotate:this.state.prArrowDeg.interpolate({
                         inputRange: [0,1],
                         outputRange: ['0deg', '-180deg']
-                    })}]
+                    })}];
+      let jsxarr = [];
+        let arrowStyle = {
+            position:'absolute',
+            width:14,
+            height:23,
+            left:-50,
+            top:-4,
+            transform:this.transform
         };
+        let indicatorStyle = {
+            position:'absolute',
+            left:-40,
+            top:-1,
+            width:16,
+            height:16
+        };
+
+        if (this.props.indicatorImg.url) {
+          if (this.props.indicatorImg.style) {
+            indicatorStyle = this.props.indicatorImg.style;
+          }
+          if (this.state.prLoading) {
+            jsxarr.push(<Image style={indicatorStyle} source={{uri:this.props.indicatorImg.url}}/>);
+          } else {
+            jsxarr.push(null);
+          }
+        } else {
+          if (this.state.prLoading) {
+            jsxarr.push(<ActivityIndicatorIOS style={indicatorStyle} animated={true}/>);
+          } else {
+            jsxarr.push(null);
+          }
+        }
+        
+        if (this.props.indicatorArrowImg.url) {
+          if (this.props.indicatorArrowImg.style) {
+            arrowStyle = this.props.arrowStyle.style;
+          }
+          arrowStyle.transform = this.transform;
+          if (!this.state.prLoading) {
+            jsxarr.push(<Animated.Image style={arrowStyle} resizeMode={'contain'} source={{uri: this.props.indicatorArrowImg.url}}/>);
+          } else {
+            jsxarr.push(null);
+          }
+        } else {
+          if (!this.state.prLoading) {
+            jsxarr.push(<Animated.Image style={arrowStyle} resizeMode={'contain'} source={{uri: this.base64Icon}}/>);
+          } else {
+            jsxarr.push(null);
+          }
+        }
+        jsxarr.push(<Text style={styles.prState}>{this.state.prTitle}</Text>)
+
+        return (
+          <View style={{alignItems:'center'}}>
+          <View style={styles.indicatorContent}>
+
+              {jsxarr.map((item,index)=>{
+                return <View key={index}>{item}</View>
+              })}
+              
+          </View>
+          <Text style={styles.prText}>上次更新时间：{this.state.prTimeDisplay}</Text>
+          </View>
+          );
+
+    }
+    rendeTextContent(){
+      
+      let prStateStyle = {
+            marginBottom:20,
+            fontSize:12,
+          };
+      return (<Text style={prStateStyle}>{this.state.prTitle}</Text>);
+    }
+    rendeImgContent(){
+      this.transform = [{rotate:this.state.prArrowDeg.interpolate({
+                        inputRange: [0,1],
+                        outputRange: ['0deg', '-180deg']
+                    })}];
+      let jsxarr = [];
+      let arrowStyle = {
+          width:14,
+          height:23,
+          marginBottom:20,
+          transform:this.transform
+      };
+      let indicatorStyle = {
+          width:16,
+          height:16,
+          marginBottom:20,
+      };
+      if (this.props.indicatorImg.url) {
+          if (this.props.indicatorImg.style) {
+            indicatorStyle = this.props.indicatorImg.style;
+          }
+          if (this.state.prLoading) {
+            jsxarr.push(<Image style={indicatorStyle} source={{uri:this.props.indicatorImg.url}}/>);
+          } else {
+            jsxarr.push(null);
+          }
+        } else {
+          if (this.state.prLoading) {
+            jsxarr.push(<ActivityIndicatorIOS style={indicatorStyle} animated={true}/>);
+          } else {
+            jsxarr.push(null);
+          }
+        }
+        
+        if (this.props.indicatorArrowImg.url) {
+          if (this.props.indicatorArrowImg.style) {
+            arrowStyle = this.props.arrowStyle.style;
+          }
+          arrowStyle.transform = this.transform;
+          if (!this.state.prLoading) {
+            jsxarr.push(<Animated.Image style={arrowStyle} resizeMode={'contain'} source={{uri: this.props.indicatorArrowImg.url}}/>);
+          } else {
+            jsxarr.push(null);
+          }
+        } else {
+          if (!this.state.prLoading) {
+            jsxarr.push(<Animated.Image style={arrowStyle} resizeMode={'contain'} source={{uri: this.base64Icon}}/>);
+          } else {
+            jsxarr.push(null);
+          }
+        }
+
+      return jsxarr;
+    }
+    renderIndicatorContent(){
+      let type = this.props.refreshType;
+      let jsx;
+
+      if (type == 'normal') {
+        jsx = [this.renderNormalContent()];
+      } 
+      if (type == 'text') {
+        jsx = [this.rendeTextContent()];
+      }
+
+      if (type == 'image') {
+        jsx = this.rendeImgContent();
+      }
+
+      return (
+              <View style={styles.pullRefresh}>
+
+                  {jsx.map((item,index)=>{
+                    return <View key={index}>{item}</View>
+                  })}
+              </View>
+              );
+    }
+    render() {
+
+
         return (
             <ScrollView
                   ref={(scrollView) => this.scrollView = scrollView}
@@ -159,16 +313,8 @@ export default class PullRefreshScrollView extends Component {
                   onScrollEndDrag={()=>this.onScrollEndDrag()}
                   onScrollBeginDrag={()=>this.onScrollBeginDrag()}
                   onScroll={(e)=>this.onScroll(e)}>
-                    <View style={styles.pullRefresh}>
-                        <View style={styles.indicatorContent}>
-
-                            {this.state.prLoading ? <ActivityIndicatorIOS style={styles.indicator} animating={true} /> : null}
-                            {!this.state.prLoading ? <Animated.Image style={arrowStyle} source={{uri: this.base64Icon}}/> : null}
-                            <Text style={styles.prState}>{this.state.prTitle}</Text>
-                        </View>
-                        <Text style={styles.prText}>上次更新时间：{this.state.prTimeDisplay}</Text>
-                    </View>
-
+                    
+                    {this.renderIndicatorContent()}
                     {this.props.children}
             </ScrollView>
 
@@ -219,10 +365,23 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         marginBottom:5
     },
-    indicator:{
-        position:'absolute',
-        left:-40,
-        top:-1
-    }
+    
 });
+
+
+PullRefreshScrollView.defaultProps = {
+    refreshedText: '释放立即刷新',
+    refreshingText: '正在刷新数据中..',
+    refreshText:'下拉可以刷新',
+    indicatorArrowImg: {
+      style:'',
+      url:''
+    },
+    indicatorImg: {
+      style:'',
+      url:''
+    },
+    refreshType:'normal',
+    onRefresh:''
+};
 

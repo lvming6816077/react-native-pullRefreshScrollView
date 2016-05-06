@@ -1,0 +1,27 @@
+{
+  "name": "react-native-pullrefresh-scrollview",
+  "version": "1.0.2",
+  "description": "",
+  "main": "PullRefreshScrollView.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvming6816077/react-native-pullRefreshScrollView.git"
+  },
+  "author": "lvming",
+  "license": "ISC",
+  "keywords": [
+    "react",
+    "react-native",
+    "react-component",
+    "react-native-component",
+    "pull-to-refresh",
+    "ui"
+  ],
+  "bugs": {
+    "url": "https://github.com/lvming6816077/react-native-pullRefreshScrollView/issues"
+  },
+  "homepage": "https://github.com/lvming6816077/react-native-pullRefreshScrollView#readme"
+}
