@@ -78,12 +78,9 @@ export default class PullRefreshScrollView extends Component {
       this.dragFlag = false;
       if (this.state.prState) {
 
-
-        if(this.props.scrollRef) {
-
-        }
+        // 回到待收起状态
         this.scrollView.scrollTo({x:0,y:-70,animated:true});
-        // this.onRefresh();
+        
 
         
         this.setState({
@@ -92,15 +89,11 @@ export default class PullRefreshScrollView extends Component {
           prArrowDeg:new Animated.Value(0),
           
         });
-        var self = this;
-        setTimeout(function(){
-            self.onRefreshEnd();
-        },2000);
 
-      }
-
-      if (this.props.onScrollEndDrag) {
-        this.props.onScrollEndDrag();
+        // 触发外部的下拉刷新方法
+        if (this.props.onRefresh) {
+          this.props.onRefresh(this);
+        }
       }
 
     }
@@ -384,4 +377,3 @@ PullRefreshScrollView.defaultProps = {
     refreshType:'normal',
     onRefresh:''
 };
-

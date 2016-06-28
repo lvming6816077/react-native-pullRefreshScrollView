@@ -15,7 +15,7 @@ import React, {
 } from 'react-native';
 
 
-import PullRefreshScrollView from '../common/PullRefreshScrollView';
+import PullRefreshScrollView from './PullRefreshScrollView';
 
 
 
@@ -33,16 +33,15 @@ export default class Projects extends Component {
         }
     }
     
-    onRefresh(){
+    onRefresh(PullRefresh){
         console.log('refresh');
-        var self = this;
+
         setTimeout(function(){
-            self.refs.PullRefresh.onRefreshEnd();
+            PullRefresh.onRefreshEnd();
         },2000);
+
     }
-    renderScrollComponent(){
-        return <PullRefreshScrollView {...props}/>
-    }
+
     render() {
 
 
@@ -52,7 +51,7 @@ export default class Projects extends Component {
                 </View>
 
                 <ListView
-                    renderScrollComponent={(props) => <PullRefreshScrollView ref="PullRefresh" onRefresh={()=>this.onRefresh()} {...props} />}
+                    renderScrollComponent={(props) => <PullRefreshScrollView onRefresh={(PullRefresh)=>this.onRefresh(PullRefresh)} {...props} />}
 
                     dataSource={this.state.dataSource}
                     renderSeparator={(sectionID, rowID) => <View key={`${sectionID}-${rowID}`} style={styles.separator} />}
