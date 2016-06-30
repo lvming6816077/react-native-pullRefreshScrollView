@@ -1,6 +1,6 @@
 {
   "name": "react-native-pullrefresh-scrollview",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "PullRefreshScrollView.js",
   "scripts": {

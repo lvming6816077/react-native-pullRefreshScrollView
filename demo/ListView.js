@@ -35,6 +35,9 @@ export default class Projects extends Component {
     
     onRefresh(PullRefresh){
         console.log('refresh');
+        this.setState({
+            a:1
+        });
 
         setTimeout(function(){
             PullRefresh.onRefreshEnd();
@@ -51,6 +54,7 @@ export default class Projects extends Component {
                 </View>
 
                 <ListView
+                
                     renderScrollComponent={(props) => <PullRefreshScrollView onRefresh={(PullRefresh)=>this.onRefresh(PullRefresh)} {...props} />}
 
                     dataSource={this.state.dataSource}

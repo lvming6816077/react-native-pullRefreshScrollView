@@ -13,12 +13,14 @@ import React, {
     ActivityIndicatorIOS
 } from 'react-native';
 
+import ScrollableMixin from './ScrollableMixin';
 
 
 export default class PullRefreshScrollView extends Component {
     constructor(props) {
         super(props);
 
+         // = this.scrollView;
         this.refreshedText = props.refreshedText;
         this.refreshingText = props.refreshingText;
         this.refreshText = props.refreshText;
@@ -295,11 +297,16 @@ export default class PullRefreshScrollView extends Component {
               </View>
               );
     }
+    getScrollResponder() {
+      return this.scrollView.getScrollResponder();
+    }
+
+    setNativeProps(props) {
+      this.scrollView.setNativeProps(props);
+    }
     render() {
 
-
-        return (
-            <ScrollView
+        return React.cloneElement(<ScrollView
                   ref={(scrollView) => this.scrollView = scrollView}
                   {...this.props}
                   scrollEventThrottle={16}
@@ -309,9 +316,12 @@ export default class PullRefreshScrollView extends Component {
                     
                     {this.renderIndicatorContent()}
                     {this.props.children}
-            </ScrollView>
-
-        );
+            </ScrollView>, {
+            ref: component => {
+            this.scrollView = component;
+          },
+        });
+        
     }
 
 }
@@ -377,3 +387,4 @@ PullRefreshScrollView.defaultProps = {
     refreshType:'normal',
     onRefresh:''
 };
+Object.assign(PullRefreshScrollView.prototype, ScrollableMixin);
