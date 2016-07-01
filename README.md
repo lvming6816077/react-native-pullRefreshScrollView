@@ -34,7 +34,7 @@ import PullRefreshScrollView from 'react-native-pullrefresh-scrollview';
 render() {
    return (
       <ListView
-        renderScrollComponent={(props) => <PullRefreshScrollView ref="PullRefresh" onRefresh={()=>this.onRefresh()} {...props}     />}
+        renderScrollComponent={(props) => <PullRefreshScrollView onRefresh={(PullRefresh)=>this.onRefresh(PullRefresh)} {...props}     />}
 
         dataSource={this.state.dataSource}
         renderRow={(rowData) => <Text>{rowData}</Text>}
@@ -70,8 +70,8 @@ refreshType:'normal'  // normal  image  text
 
 #####收回下拉刷新
 ```javascript
-onRefresh(){
-        this.refs.PullRefresh.onRefreshEnd();
+onRefresh(PullRefresh){
+        PullRefresh.onRefreshEnd();
 }
 ```
 ##建议和反馈
