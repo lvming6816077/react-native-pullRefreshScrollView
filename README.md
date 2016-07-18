@@ -12,7 +12,7 @@ React Native下拉刷新组件 ios 平台 支持ScrollView,ListView
 ##如何引入
 
 #####从npm上下载组件
-<pre>npm install react-native-pullrefresh-scrollview</pre>
+<pre>npm install --save react-native-pullrefresh-scrollview</pre>
 
 #####在ScrollView中使用
 ```javascript
