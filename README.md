@@ -75,7 +75,7 @@ onRefresh(PullRefresh){
 }
 ```
 ##Advice
-main:441403517@qq.com
+mail:441403517@qq.com
 
 
 # react-native-pullRefreshScrollView
