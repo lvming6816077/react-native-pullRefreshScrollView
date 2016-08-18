@@ -1,4 +1,6 @@
+
 'use strict';
+import {AppRegistry} from 'react-native';
 import React, {
     View,
     Component,
@@ -15,14 +17,12 @@ import React, {
 } from 'react-native';
 
 
-import PullRefreshScrollView from './PullRefreshScrollView';
+import PullRefreshScrollView from 'react-native-pullrefresh-scrollview';;
 
 
 
 
-/**
- * 项目申请模块
- */
+
 export default class Projects extends Component {
     constructor(props) {
         super(props);
@@ -35,9 +35,7 @@ export default class Projects extends Component {
     
     onRefresh(PullRefresh){
         console.log('refresh');
-        this.setState({
-            a:1
-        });
+
 
         setTimeout(function(){
             PullRefresh.onRefreshEnd();
@@ -92,3 +90,4 @@ const styles = StyleSheet.create({
         backgroundColor: '#CCCCCC',
       },
 });
+AppRegistry.registerComponent('demo', () => Projects);

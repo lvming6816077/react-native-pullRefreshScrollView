@@ -1,4 +1,6 @@
 'use strict';
+
+import {AppRegistry} from 'react-native';
 import React, {
     View,
     Component,
@@ -15,14 +17,12 @@ import React, {
 } from 'react-native';
 
 
-import PullRefreshScrollView from '../common/PullRefreshScrollView';
+import PullRefreshScrollView from 'react-native-pullrefresh-scrollview';;
 
 
 
 
-/**
- * 项目申请模块
- */
+
 export default class Projects extends Component {
     constructor(props) {
         super(props);
@@ -84,3 +84,4 @@ const styles = StyleSheet.create({
         backgroundColor: '#CCCCCC',
       },
 });
+AppRegistry.registerComponent('demo', () => Projects);
