@@ -346,7 +346,7 @@ const dateFormat = function(dateTime, fmt) {
 const styles = StyleSheet.create({
     pullRefresh:{
       position:'absolute',
-      top:-70,
+      top:-69,
       left:0,
       right:0,
       height:70,
