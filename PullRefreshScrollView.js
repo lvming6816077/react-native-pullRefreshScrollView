@@ -1,7 +1,7 @@
 'use strict';
 
-import React, {
-    Component,
+import React, {Component} from 'react';
+import {
     View,
     Text,
     Image,
@@ -10,7 +10,7 @@ import React, {
     Animated,
     Easing,
     ScrollView,
-    ActivityIndicatorIOS
+    ActivityIndicator
 } from 'react-native';
 
 import ScrollableMixin from './ScrollableMixin';
@@ -172,7 +172,7 @@ export default class PullRefreshScrollView extends Component {
           }
         } else {
           if (this.state.prLoading) {
-            jsxarr.push(<ActivityIndicatorIOS style={indicatorStyle} animated={true}/>);
+            jsxarr.push(<ActivityIndicator style={indicatorStyle} animated={true}/>);
           } else {
             jsxarr.push(null);
           }
@@ -247,7 +247,7 @@ export default class PullRefreshScrollView extends Component {
           }
         } else {
           if (this.state.prLoading) {
-            jsxarr.push(<ActivityIndicatorIOS style={indicatorStyle} animated={true}/>);
+            jsxarr.push(<ActivityIndicator style={indicatorStyle} animated={true}/>);
           } else {
             jsxarr.push(null);
           }
