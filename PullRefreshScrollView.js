@@ -304,11 +304,23 @@ export default class PullRefreshScrollView extends Component {
     setNativeProps(props) {
       this.scrollView.setNativeProps(props);
     }
+    fixSticky() {
+      let stickyHeaderIndices = [];
+      for (let i = 0 ; i < this.props.stickyHeaderIndices.length ; i++) {
+        if (i > 0) {
+          stickyHeaderIndices.push(this.props.stickyHeaderIndices[i]+1);
+        }
+        
+      }
+      return stickyHeaderIndices;
+    }
+
     render() {
 
         return React.cloneElement(<ScrollView
                   ref={(scrollView) => this.scrollView = scrollView}
                   {...this.props}
+                  stickyHeaderIndices={this.fixSticky()}
                   scrollEventThrottle={16}
                   onScrollEndDrag={()=>this.onScrollEndDrag()}
                   onScrollBeginDrag={()=>this.onScrollBeginDrag()}
