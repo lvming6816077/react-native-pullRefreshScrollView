@@ -52,6 +52,9 @@ render() {
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewText.gif" />
 #####Only image
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage2.gif" />
+#####LoadMore
+<img src="https://oc5n93kni.qnssl.com/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.44.png" />
+<img src="https://oc5n93kni.qnssl.com/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.46.png" />
 #####props
 
 <pre>
@@ -59,6 +62,9 @@ onRefresh：
 refreshedText: ''
 refreshingText: ''
 refreshText:''
+useLoadMore:false
+endText:''
+endingText:''
 indicatorArrowImg: { //  default arrow.png
     style:{},
     url:''
@@ -132,6 +138,9 @@ render() {
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewText.gif" />
 #####纯图片
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage2.gif" />
+#####上拉加载
+<img src="https://oc5n93kni.qnssl.com/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.44.png" />
+<img src="https://oc5n93kni.qnssl.com/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.46.png" />
 #####props
 
 <pre>
