@@ -1,8 +1,6 @@
 # react-native-pullRefreshScrollView
 React Native Pull To Refresh Component for ios platform  support ScrollView,ListView
 
-
-
 ##Demo
 ####ScrollView:
 <img src="http://7jpp2v.com1.z0.glb.clouddn.com/ScrollView.gif" />
@@ -172,7 +170,3 @@ onRefresh(PullRefresh){
 ```
 ##建议和反馈
 此组件还在不断更新中，如有需求欢迎提出反馈441403517@qq.com
-
-
-
-

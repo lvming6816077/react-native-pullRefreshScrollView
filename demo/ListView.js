@@ -1,9 +1,8 @@
 
 'use strict';
-import {AppRegistry} from 'react-native';
-import React, {
+import React, { Component } from 'react';
+import {
     View,
-    Component,
     ListView,
     Image,
     Text,
@@ -13,7 +12,8 @@ import React, {
     Alert,
     ScrollView,
     Dimensions,
-    InteractionManager
+    InteractionManager,
+    AppRegistry
 } from 'react-native';
 
 
@@ -32,7 +32,7 @@ export default class Projects extends Component {
 
         }
     }
-    
+
     onRefresh(PullRefresh){
         console.log('refresh');
 
@@ -41,6 +41,20 @@ export default class Projects extends Component {
             PullRefresh.onRefreshEnd();
         },2000);
 
+    }
+
+    onLoadMore(PullRefresh) {
+      var self = this;
+      setTimeout(function(){
+
+            self.data = self.data.concat(['有种你滑我啊(新)']);
+            self.setState({
+              dataSource: self.state.dataSource.cloneWithRows(self.data)
+            });
+            PullRefresh.onLoadMoreEnd();
+        },2000);
+      
+      console.log('onLoadMore');
     }
 
     render() {
@@ -52,19 +66,15 @@ export default class Projects extends Component {
                 </View>
 
                 <ListView
-                
-                    renderScrollComponent={(props) => <PullRefreshScrollView onRefresh={(PullRefresh)=>this.onRefresh(PullRefresh)} {...props} />}
+
+                    renderScrollComponent={(props) => <PullRefreshScrollView onRefresh={(PullRefresh)=>this.onRefresh(PullRefresh)} onLoadMore={(PullRefresh)=>this.onLoadMore(PullRefresh)} useLoadMore={1}{...props} />}
 
                     dataSource={this.state.dataSource}
                     renderSeparator={(sectionID, rowID) => <View key={`${sectionID}-${rowID}`} style={styles.separator} />}
                     renderRow={(rowData) => <View style={styles.rowItem}><Text style={{fontSize:16}}>{rowData}</Text></View>}
                 />
-
-                    
-                
-                
             </View>
-            
+
         );
     }
 }

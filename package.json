@@ -1,17 +1,61 @@
 {
-  "name": "react-native-pullrefresh-scrollview",
-  "version": "1.0.6",
-  "description": "",
-  "main": "PullRefreshScrollView.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "_args": [
+    [
+      "react-native-pullrefresh-scrollview",
+      "/Users/Setoge/Desktop/temp/ListViewDemoo"
+    ]
+  ],
+  "_cnpm_publish_time": 1471523846560,
+  "_from": "react-native-pullrefresh-scrollview@latest",
+  "_id": "react-native-pullrefresh-scrollview@1.0.7",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/react-native-pullrefresh-scrollview",
+  "_nodeVersion": "5.10.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/react-native-pullrefresh-scrollview-1.0.7.tgz_1471523844554_0.8383674626238644"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lvming6816077/react-native-pullRefreshScrollView.git"
+  "_npmUser": {
+    "email": "441403517@qq.com",
+    "name": "lvming6816077"
   },
-  "author": "lvming",
-  "license": "ISC",
+  "_npmVersion": "3.8.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "react-native-pullrefresh-scrollview",
+    "raw": "react-native-pullrefresh-scrollview",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/react-native-pullrefresh-scrollview/download/react-native-pullrefresh-scrollview-1.0.7.tgz",
+  "_shasum": "9f2daadebb6408ef3adc7f1c6fd0a4ddb6aa3d20",
+  "_shrinkwrap": null,
+  "_spec": "react-native-pullrefresh-scrollview",
+  "_where": "/Users/Setoge/Desktop/temp/ListViewDemoo",
+  "author": {
+    "name": "lvming"
+  },
+  "bugs": {
+    "url": "https://github.com/lvming6816077/react-native-pullRefreshScrollView/issues"
+  },
+  "dependencies": {},
+  "description": "React Native Pull To Refresh Component for ios platform  support ScrollView,ListView",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "noattachment": false,
+    "shasum": "9f2daadebb6408ef3adc7f1c6fd0a4ddb6aa3d20",
+    "size": 5174,
+    "tarball": "http://registry.npm.taobao.org/react-native-pullrefresh-scrollview/download/react-native-pullrefresh-scrollview-1.0.7.tgz"
+  },
+  "gitHead": "026753186a8bed4f45ac446974f80ceafb57fd46",
+  "homepage": "https://github.com/lvming6816077/react-native-pullRefreshScrollView#readme",
   "keywords": [
     "react",
     "react-native",
@@ -20,8 +64,24 @@
     "pull-to-refresh",
     "ui"
   ],
-  "bugs": {
-    "url": "https://github.com/lvming6816077/react-native-pullRefreshScrollView/issues"
+  "license": "ISC",
+  "main": "PullRefreshScrollView.js",
+  "maintainers": [
+    {
+      "email": "441403517@qq.com",
+      "name": "lvming6816077"
+    }
+  ],
+  "name": "react-native-pullrefresh-scrollview",
+  "optionalDependencies": {},
+  "publish_time": 1471523846560,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvming6816077/react-native-pullRefreshScrollView.git"
   },
-  "homepage": "https://github.com/lvming6816077/react-native-pullRefreshScrollView#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.7"
 }

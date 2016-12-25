@@ -1,9 +1,8 @@
 'use strict';
 
-import {AppRegistry} from 'react-native';
-import React, {
+import React, { Component } from 'react';
+import {
     View,
-    Component,
     ListView,
     Image,
     Text,
@@ -13,11 +12,12 @@ import React, {
     Alert,
     ScrollView,
     Dimensions,
-    InteractionManager
+    InteractionManager,
+    AppRegistry,
 } from 'react-native';
 
 
-import PullRefreshScrollView from 'react-native-pullrefresh-scrollview';;
+import PullRefreshScrollView from 'react-native-pullrefresh-scrollview';
 
 
 
@@ -28,7 +28,7 @@ export default class Projects extends Component {
         super(props);
 
     }
-    
+
     onRefresh(){
         console.log('refresh');
         var self = this;
@@ -54,9 +54,9 @@ export default class Projects extends Component {
                     <View style={styles.scrollItem}><Text>Scroll6</Text></View>
                 </PullRefreshScrollView>
 
-                
+
             </View>
-            
+
         );
     }
 }
