@@ -139,6 +139,9 @@ onRefresh：当触发刷新时的回调
 refreshedText: '释放立即刷新'
 refreshingText: '正在刷新数据中..'
 refreshText:'下拉可以刷新'
+useLoadMore:false //是否使用滚动加载功能 即上拉加载
+endText:'已经加载完成'
+endingText:'加载更多数据'
 indicatorArrowImg: { // 下拉箭头图片和样式 default arrow.png
     style:{},
     url:''
