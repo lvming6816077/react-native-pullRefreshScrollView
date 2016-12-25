@@ -81,6 +81,12 @@ onRefresh(PullRefresh){
         PullRefresh.onRefreshEnd();
 }
 ```
+#####End the LoadMore
+```javascript
+onLoadMore(PullRefresh){
+        PullRefresh.onLoadMoreEnd();
+}
+```
 ##Advice
 mail:441403517@qq.com
 
@@ -166,6 +172,12 @@ refreshType:'normal'  // normal  image  text
 ```javascript
 onRefresh(PullRefresh){
         PullRefresh.onRefreshEnd();
+}
+```
+#####结束滚动加载
+```javascript
+onLoadMore(PullRefresh){
+        PullRefresh.onLoadMoreEnd();
 }
 ```
 ##建议和反馈
