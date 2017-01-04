@@ -383,9 +383,10 @@ export default class PullRefreshScrollView extends Component {
     }
     fixSticky() {
       let stickyHeaderIndices = [];
-      for (let i = 0 ; i < this.props.stickyHeaderIndices.length ; i++) {
+      let propsStickHeader = this.props.stickyHeaderIndices || [];
+      for (let i = 0 ; i < propsStickHeader.length ; i++) {
         if (i > 0) {
-          stickyHeaderIndices.push(this.props.stickyHeaderIndices[i]+1);
+          stickyHeaderIndices.push(propsStickHeader[i]+1);
         }
         
       }
