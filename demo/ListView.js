@@ -27,8 +27,9 @@ export default class Projects extends Component {
     constructor(props) {
         super(props);
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        this.data = ['有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊'];
         this.state = {
-            dataSource: ds.cloneWithRows(['有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊', '有种你滑我啊']),
+            dataSource: ds.cloneWithRows(this.data),
 
         }
     }
@@ -51,7 +52,7 @@ export default class Projects extends Component {
             self.setState({
               dataSource: self.state.dataSource.cloneWithRows(self.data)
             });
-            PullRefresh.onLoadMoreEnd();
+            // PullRefresh.onLoadMoreEnd(); uncomment to end loadmore
         },2000);
       
       console.log('onLoadMore');
@@ -100,4 +101,4 @@ const styles = StyleSheet.create({
         backgroundColor: '#CCCCCC',
       },
 });
-AppRegistry.registerComponent('demo', () => Projects);
+AppRegistry.registerComponent('ReactnativeIOS', () => Projects);
