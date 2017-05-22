@@ -151,6 +151,12 @@ export default class PullRefreshScrollView extends Component {
       });
       
     }
+    onBeginLoadMore(target){
+      this.setState({
+        lmState:0
+      });
+      
+    }
     onRefreshEnd(){
         let now = new Date().getTime();
         this.setState({
