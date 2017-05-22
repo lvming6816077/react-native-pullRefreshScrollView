@@ -52,7 +52,7 @@ export default class Projects extends Component {
             self.setState({
               dataSource: self.state.dataSource.cloneWithRows(self.data)
             });
-            // PullRefresh.onLoadMoreEnd(); uncomment to end loadmore
+            // PullRefresh.onLoadMoreEnd(); uncomment to end loadmore确保下一页没有数据的时候在调用这个方法
         },2000);
       
       console.log('onLoadMore');
