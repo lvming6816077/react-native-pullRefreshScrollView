@@ -61,7 +61,7 @@ render() {
 
 ##### Only image
 
-<img src="http://http://qiniu.nihaoshijie.com.cn/ListViewImage2.gif" />
+<img src="http://qiniu.nihaoshijie.com.cn/ListViewImage2.gif" />
 
 ##### LoadMore
 
