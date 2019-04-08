@@ -7,12 +7,12 @@ React Native Pull To Refresh Component for ios platform  support ScrollView,List
 
 #### ScrollView:
 
-<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ScrollView.gif" />
+<img src="http://qiniu.nihaoshijie.com.cn/ScrollView.gif" />
 
 
 #### ListView:
 
-<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListView.gif" />
+<img src="http://qiniu.nihaoshijie.com.cn/ListView.gif" />
 
 ## How to use
 
@@ -53,23 +53,23 @@ render() {
 ```
 ##### image
 
-<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage.gif" />
+<img src="http://qiniu.nihaoshijie.com.cn/ListViewImage.gif" />
 
 ##### Only text
 
-<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewText.gif" />
+<img src="http://qiniu.nihaoshijie.com.cn/ListViewText.gif" />
 
 ##### Only image
 
-<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage2.gif" />
+<img src="http://http://qiniu.nihaoshijie.com.cn/ListViewImage2.gif" />
 
 ##### LoadMore
 
-<img src="https://oc5n93kni.qnssl.com/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.44.png?imageView2/2/w/318" />
+<img src="https://http://qiniu.nihaoshijie.com.cn/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.44.png?imageView2/2/w/318" />
 
 ##### End LoadMore
 
-<img src="https://oc5n93kni.qnssl.com/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.46.png?imageView2/2/w/318" />
+<img src="https://http://qiniu.nihaoshijie.com.cn/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.46.png?imageView2/2/w/318" />
 
 ##### props
 
@@ -119,12 +119,12 @@ React Native下拉刷新组件 ios 平台 支持ScrollView,ListView
 
 #### ScrollView:
 
-<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ScrollView.gif" />
+<img src="http://http://qiniu.nihaoshijie.com.cn/ScrollView.gif" />
 
 
 #### ListView:
 
-<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListView.gif" />
+<img src="http://http://qiniu.nihaoshijie.com.cn/ListView.gif" />
 
 ## 如何引入
 
@@ -165,23 +165,23 @@ render() {
 ```
 ##### 定制图片
 
-<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage.gif" />
+<img src="http://http://qiniu.nihaoshijie.com.cn/ListViewImage.gif" />
 
 ##### 纯文字
 
-<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewText.gif" />
+<img src="http://http://qiniu.nihaoshijie.com.cn/ListViewText.gif" />
 
 ##### 纯图片
 
-<img src="http://7jpp2v.com1.z0.glb.clouddn.com/ListViewImage2.gif" />
+<img src="http://http://qiniu.nihaoshijie.com.cn/ListViewImage2.gif" />
 
 ##### 上拉加载
 
-<img src="https://oc5n93kni.qnssl.com/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.44.png?imageView2/2/w/318" />
+<img src="https://http://qiniu.nihaoshijie.com.cn/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.44.png?imageView2/2/w/318" />
 
 ##### 上拉加载完成
 
-<img src="https://oc5n93kni.qnssl.com/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.46.png?imageView2/2/w/318" />
+<img src="https://http://qiniu.nihaoshijie.com.cn/Simulator%20Screen%20Shot%202016%E5%B9%B412%E6%9C%8825%E6%97%A5%2019.49.46.png?imageView2/2/w/318" />
 
 ##### props
 
